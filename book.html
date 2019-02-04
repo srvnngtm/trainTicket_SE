@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>booking</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CDN -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+  <style>
+#passenger_fileds span{
+  width: 75px;
+}
+
+#passenger_fileds input{
+  width: 450px;
+}
+
+
+footer{
+  position: fixed;
+  z-index: 3;
+  bottom: 10px;
+  width: 100%;
+}
+
+#end{
+ position:relative; top:25px; left: 45%;
+
+}
+  .foot
+  {
+   font-size: 40px;
+   background-color:black;
+  }
+	.footicon
+  {
+		color:grey;
+	}
+
+  .footer,.push
+  {
+    left:0;
+    height: 545px;
+  }
+
+
+  #border label
+  {
+      width: 300px;
+  }
+</style>
+
+   <script>
+
+     var passenger = 1;
+   function add_fields()
+   {
+       passenger++;
+       if(passenger==7)
+       {
+
+       }
+       else{
+         var obj = document.getElementById('passenger_fileds');
+         var test = document.createElement("div");
+
+         test.innerHTML='<div class="label" style="color:black; margin-top:20px;" ><font size="3">Passenger '+passenger+'</font></div><br>'
+
+         test.innerHTML +='<div class="col-lg-6"><div class="input-group"><span class="input-group-addon" id="basic-addon1">Name </span><input type="text" name="Name[]" class="form-control"  placeholder="Name" aria-describedby="basic-addon1"></div></div><div class="col-lg-6"><div class="input-group"><span class="input-group-addon" id="basic-addon1">Age </span><input type="number" name="Age[]" class="form-control"   placeholder="Age" aria-describedby="basic-addon1"></div></div><div class="col-lg-6"><div class="input-group"><span class="input-group-addon" id="basic-addon1">number</span> <input type="number" name="Mobile[]" class="form-control"   placeholder="Number" aria-describedby="basic-addon1"> </div> </div>  <div class="col-lg-6"> <div class="input-group"><span class="input-group-addon" id="basic-addon1">Email</span> <input type="email" name="Email[]" class="form-control"   placeholder="mail id" aria-describedby="basic-addon1"></div> </div><p></p>'
+
+
+
+         obj.appendChild(test)
+         if(passenger==6)
+         {
+           var b=document.getElementById("more_fields");
+           b.style.display="none";
+
+
+
+
+         }
+       }
+
+   }
+
+</script>
+
+
+</head>
+
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <div class="container">
+    <!-- navbar#####################################################################################################333-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="#">ASHAS railways</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><span class="glyphicon"></span> Home</a></li>
+            <li><a href="#"><span class="glyphicon"></span> Book your ticket</a></li>
+            <li><a href="#"><span class="glyphicon"></span>E-catering</a></li>
+            <li><a href="#"><span class="glyphicon"></span>Cancel</a></li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="calculator.html"><span class="glyphicon glyphicon-log-in"></span>Enquiry/Contact us</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+<!-- cross button -->
+<!--
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button> -->
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Book your tickets here!!</h1>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>
+</div>
+
+           <div id="passenger_fileds">
+
+      <div class="content">
+  <div class="label" style="color:black" ><font size="3">Passenger 1</font></div><br>
+
+
+    <!-- <form class="" action="index.html" method="post"> -->
+
+
+                <div class="col-lg-6">
+                  <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Name </span>
+                <input type="text" name="Name[]"  class="form-control"  placeholder="Name" aria-describedby="basic-addon1 " required="">
+
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="input-group">
+
+                <span class="input-group-addon" id="basic-addon1">Age </span>
+                <input type="number" name="Age[]" class="form-control"   placeholder="Age" aria-describedby="basic-addon1" required="">
+                  </div>
+                </div>
+
+<div class="col-lg-6">
+  <div class="input-group">
+
+<span class="input-group-addon" id="basic-addon1">number</span>
+<input type="number" name="Mobile[]" class="form-control"   placeholder="Number" aria-describedby="basic-addon1">
+  </div>
+</div>
+
+<div class="col-lg-6">
+  <div class="input-group">
+
+<span class="input-group-addon" id="basic-addon1">Email</span>
+<input type="email" name="Email[]" class="form-control"   placeholder="mail id" aria-describedby="basic-addon1">
+  </div>
+</div>
+
+
+
+</div>
+</div>
+
+              <div class="container">
+                <!-- <input type="button" id="more_fields" onclick="add_fields()" value="  +  " /> -->
+               <button  id="more_fields" onClick="add_fields()" class="btn btn-primary">Add</button>
+              </div>
+ <!-- booking donr -->
+     <button id="end"  class="btn btn-success" type="submit">Submit !</button>
+<!-- </form> -->
+
+
+
+
+
+
+
+
+<div class="push"></div>
+</div>
+
+
+  <!-- ############################   FOOTER  ###############################################################################################################################-->
+</body>
+
+  <footer id="footer">
+    <!--footer -->
+
+    <div class="container" bg-color="red">
+      <div class="row" align="center">
+        <div class="col-sm-12 foot">
+          <a href="#"> <i class="fab fa-facebook-square footicon"></i></a>
+          <a href="#"> <i class="fab fa-github footicon"></i></a>
+          <a href="#"> <i class="fab fa-google-plus-square footicon"></i></a>
+          <a href="#"> <i class="fab fa-twitter-square footicon"></i></a>
+          <a href=""> <i class="fab fa-youtube footicon"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      © 2019 Copyright:
+      <a href="#"> #HASH </a>
+    </div>
+  </footer>
+
+
+
+
+</html>
