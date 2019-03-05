@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>FindBerth</title>
+  <title>Platform page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CDN -->
@@ -13,6 +13,27 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 
   <style>
+    html, body { height:100%; }
+
+    .outer-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    }
+
+    .inner-wrapper {
+      display:table-cell;
+      vertical-align:middle;
+      padding:15px;
+    }
+    .login-btn { position:fixed; top:15px; right:15px; }
+
+
+
+
+
+
+
 #passenger_fileds span
 {
   width: 75px;
@@ -35,6 +56,8 @@ footer{
  position:relative; top:25px; left: 45%;
 
 }
+
+
   .foot
   {
    font-size: 40px;
@@ -59,81 +82,19 @@ footer{
 </style>
 
    <script>
+   function myfunc() {
+     var par=document.getElementsByName('parameters')[0];
+     var index=par.selectedIndex
+     console.log(par.options[index].text);
 
-console.log("hp");
-function display()
-{
-  var a1 =  document.getElementById("user_input").value;
-  console.log(a1);
-  a=a1%8;
-  console.log(a);
-  if(a==1)
-  {
-  document.getElementById('d').innerHTML = "Left Lower berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
+     var numTickets = document.getElementById('exa').value;
+     var res=numTickets*35;
+     document.getElementById('fare').innerHTML = "Pay "+res+ " rupees";
   }
-  else if(a==2)
-  {
-  document.getElementById('d').innerHTML = "Left Middle berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  // var a =  document.getElementById("user_input").value;
-  else if(a==3)
-  {
-  document.getElementById('d').innerHTML = "Left Upper berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  else if(a==4)
-  {
-  document.getElementById('d').innerHTML = "Right Lower berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  // var a =  document.getElementById("user_input").value;
-  if(a==5)
-  {
-  document.getElementById('d').innerHTML = "Right Middle berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  if(a==6)
-  {
-  document.getElementById('d').innerHTML = "Right Upper berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  // var a =  document.getElementById("user_input").value;
-  if(a==7)
-  {
-  document.getElementById('d').innerHTML = "Side Lower berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  if(a==0)
-  {
+   </script>
 
-  document.getElementById('d').innerHTML = "Side Upper berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
 
-  function handle(e)
-  {
-    e=e||window.event;
-    var key = e.keyCode;
-    if(key==13) 
-    {
-      display();
 
-       }
-  }
-
-}
-
-</script>
 </head>
 
 <body>
@@ -169,37 +130,95 @@ function display()
     </nav>
 
 
+<!-- ****************************************************************************************** -->
 
-<!-- cross button -->
-<!--
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button> -->
+
+
+<section id="loginform" class="outer-wrapper">
+
+  <div class="inner-wrapper">
 <div class="container">
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h2 class="display-2">Check your BERTH</h2>
-    <!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h2 class="text-center">Un-reserved ticket booking</h2>
+
+
+<!--
+        <select name = "parameters">
+                <option value = "station1">Coimbatore</option>
+                <option value = "station2">Chennai</option>
+                <option value = "station3">Madurai</option>
+                <option value = "station4">Bangalore</option>
+                <option value = "station5">Mumbai</option>
+        </select> -->
+
+
+
+
+       <div class="form-group">
+         <label class="control-label "></label>
+         <div>
+           <label for="exampleInputPassword1">From Station name</label>
+           <select name = "parameters" class="form-control">
+             <option value = "station1">Coimbatore</option>
+             <option value = "station2">Chennai</option>
+             <option value = "station3">Madurai</option>
+             <option value = "station4">Bangalore</option>
+             <option value = "station5">Mumbai</option>
+           </select>
+         </div>
+
+<div>
+           <label for="exampleInputPassword1">To Station name</label>
+           <select name = "parameters" class="form-control">
+             <option value = "station1">Coimbatore</option>
+             <option value = "station2">Chennai</option>
+             <option value = "station3">Madurai</option>
+             <option value = "station4">Bangalore</option>
+             <option value = "station5">Mumbai</option>
+           </select>
+         </div>
+
+       </div>
+
+
+
+       <div class="form-group">
+         <label for="exampleInputPassword1">Number of tickets</label>
+         <input type="number" class="form-control" id="exa" placeholder="Enter number of tickets">
+       </div>
+
+
+
+<!--   <button  onclick = "myfunc()" class="btn btn-primary">check</button> -->
+
+<h3 id=fare></h3>
+<button type="button" class="btn btn-success">Pay </button>
+    </div>
   </div>
 </div>
 </div>
 
-<div class="container">
+</section>
 
-  <form >
-    <div class="form-group">
-      <label for="exampleInputEmail1">Ticket number</label>
-      <input type="number" class="form-control" id="user_input"  placeholder="Enter ticket number">
-    </div>
+<!-- ************************************************************************************************** -->
 
-<button type="button" class="btn btn-primary" onclick="display()" onkeypress="handle(event)">Submit</button>
 
-  </form>
 
-  <h1><span id='d'></span></h1>
-   <!-- <img id="bigpic" src="bigpic" /> -->
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<form action="" method="post" class="tes">
+    <h1> Train Enquiry System</h1>
+     Enter Train No: <br>
+      <input type='text' name='tarin_no'id="tarin_no" >
+      <br>
+     
+
+      <br>
+        <div>
+            <button type="submit" onclick="myFunction()">Submit </button>
+        </div>
+    </form>
+  <!-- </div> -->
+
+  <div style='float:right'>
+
+    <form action="" method="post" class="ses">
+      <h1> Station Enquiry System</h1>
+     Enter Station Name: <br>
+      <input type='text' name='Station_name' id='Station_name' >
+      <br><br>
+        <div>
+            <button type="submit" onclick="myFunction2()">Submit</button>
+        </div>
+    </form>
+</head>
+<script type="text/javascript">
+	function myFunction()
+	{
+		var a=document.getElementById('tarin_no').value;
+		alert(a);
+		var data=[{
+   "no":"09014",
+  "status" :"reaching mumbai"},
+
+ {"no":"10103",
+ "status":"waiting in madgon"},
+
+  {"no":"10104",
+  "status":"left kottayam"},
+
+  {"no":"10111",
+  "status":"arriving in thrissur"}
+]
+var status='';
+for(var i=0;i<data.length;i++)
+{
+  if(data[i].no==a)
+  	alert(data[i].status)
+}
+
+	}
+function myFunction2()
+	{
+		var a=document.getElementById('Station_name').value;
+		alert(a);
+		var data=[{
+   "name":"kottayam",
+  "status" :"Train no 09014 will be late by 30 mins",
+   "status1" :"Train no 10103 is on Time",
+   "status2":"Train no 10104 is on Time"},
+
+ {
+   "name":"kochi",
+  "status" :"Train no 09014 will be late by 1 hr",
+   "status1" :"Train no 10103 is on Time",
+   "status2":"Train no 10104 is Canceled"},
+
+ {
+   "name":"calicut",
+  "status" :"Train no 09014 is on Time",
+   "status1" :"Train no 10103 is on Time",
+   "status2":"Train no 10104 is on Time"},
+
+   {
+   "name":"coimbatore",
+  "status" :"Train no 09014 is Delayed by 2hr",
+   "status1" :"Train no 10103 is on Time",
+   "status2":"Train no 10104 is on Time"}
+]
+var status='';
+for(var i=0;i<data.length;i++)
+{
+  if(data[i].name==a){
+  	alert(data[i].status);
+  	alert(data[i].status1);
+  	alert(data[i].status2);
+  }
+}
+
+	}
+
+
+
+
+
+
+</script>
+
+</html>
