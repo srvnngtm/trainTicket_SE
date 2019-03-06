@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>template page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CDN -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+  <style>
+#passenger_fileds span
+{
+  width: 75px;
+}
+
+#passenger_fileds input
+{
+  width: 450px;
+}
+
+
+footer{
+  position: fixed;
+  z-index: 3;
+  bottom: 10px;
+  width: 100%;
+}
+
+#end{
+ position:relative; top:25px; left: 45%;
+
+}
+  .foot
+  {
+   font-size: 40px;
+   background-color:black;
+  }
+	.footicon
+  {
+		color:grey;
+	}
+
+  .footer,.push
+  {
+    left:0;
+    height: 545px;
+  }
+
+
+  #border label
+  {
+      width: 300px;
+  }
+</style>
+
+   <script>
+
+   </script>
+
+
+
+</head>
+
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <div class="container">
+    <!-- navbar#####################################################################################################333-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="#">ASHAS railways</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><span class="glyphicon"></span> Home</a></li>
+            <li><a href="#"><span class="glyphicon"></span> Book your ticket</a></li>
+            <li><a href="#"><span class="glyphicon"></span>E-catering</a></li>
+            <li><a href="#"><span class="glyphicon"></span>Cancel</a></li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="calculator.html"><span class="glyphicon glyphicon-log-in"></span>Enquiry/Contact us</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<!-- ****************************************************************************************** -->
+
+
+
+<form method=POST action="{{ url_for('book_res') }}" >
+       
+         <div align="center"></center><h2>
+                  <span>  <input type="text"  name="fromstation" placeholder="From">
+                  <input type="text"  name="tostation" placeholder="To">
+                  <input type="date"  name="ticketdate" placeholder="Username">
+          </span></h2>  
+         <h3>      
+          <span> 1 <input type="text"  name="pn1" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_1" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_1" placeholder="ID number">
+          </span> </h3>  
+         <h3>
+          <span> 2 <input type="text"  name="pn2" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_2" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_2" placeholder="ID number">
+          </span> </h3>
+          <h3>
+          <span> 3 <input type="text"  name="pn3" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_3" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_3" placeholder="ID number">
+          </span></h3>
+       <h3>
+          <span> 4 <input type="text"  name="pn4" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_4" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_4" placeholder="ID number">
+          </span></h3>
+         <h3>
+          <span> 5 <input type="text"  name="pn5" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_5" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_5" placeholder="ID number">
+          </span></h3>
+          <h3>
+          <span> 6 <input type="text"  name="pn6" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_6" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_6" placeholder="ID number">
+          </span> </h3>             
+         
+        
+            <h2>    <button type="submit" >Submit</button></h2>
+            </div>
+            </form>
+
+
+
+
+
+
+
+
+<!-- ************************************************************************************************** -->
+
+
+
+<div class="push"></div>
+</div>
+  <!-- ############################   FOOTER  ###############################################################################################################################-->
+</body>
+
+  <footer id="footer">
+    <!--footer -->
+
+    <div class="container" bg-color="red">
+      <div class="row" align="center">
+        <div class="col-sm-12 foot">
+          <a href="#"> <i class="fab fa-facebook-square footicon"></i></a>
+          <a href="#"> <i class="fab fa-github footicon"></i></a>
+          <a href="#"> <i class="fab fa-google-plus-square footicon"></i></a>
+          <a href="#"> <i class="fab fa-twitter-square footicon"></i></a>
+          <a href=""> <i class="fab fa-youtube footicon"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      © 2019 Copyright:
+      <a href="#"> #HASH </a>
+    </div>
+  </footer>
+
+
+
+
+</html>
