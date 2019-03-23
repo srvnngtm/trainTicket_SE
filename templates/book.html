@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>FindBerth</title>
+  <title>template page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CDN -->
@@ -60,80 +60,10 @@ footer{
 
    <script>
 
-console.log("hp");
-function display()
-{
-  var a1 =  document.getElementById("user_input").value;
-  console.log(a1);
-  a=a1%8;
-  console.log(a);
-  if(a==1)
-  {
-  document.getElementById('d').innerHTML = "Left Lower berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  else if(a==2)
-  {
-  document.getElementById('d').innerHTML = "Left Middle berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  // var a =  document.getElementById("user_input").value;
-  else if(a==3)
-  {
-  document.getElementById('d').innerHTML = "Left Upper berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  else if(a==4)
-  {
-  document.getElementById('d').innerHTML = "Right Lower berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  // var a =  document.getElementById("user_input").value;
-  if(a==5)
-  {
-  document.getElementById('d').innerHTML = "Right Middle berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  if(a==6)
-  {
-  document.getElementById('d').innerHTML = "Right Upper berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  // var a =  document.getElementById("user_input").value;
-  if(a==7)
-  {
-  document.getElementById('d').innerHTML = "Side Lower berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
-  if(a==0)
-  {
+   </script>
 
-  document.getElementById('d').innerHTML = "Side Upper berth";
-  //   var pic = ""
-  //   document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
-  }
 
-  function handle(e)
-  {
-    e=e||window.event;
-    var key = e.keyCode;
-    if(key==13) 
-    {
-      display();
 
-       }
-  }
-
-}
-
-</script>
 </head>
 
 <body>
@@ -169,38 +99,61 @@ function display()
     </nav>
 
 
+<!-- ****************************************************************************************** -->
 
-<!-- cross button -->
-<!--
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button> -->
-<div class="container">
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h2 class="display-2">Check your BERTH</h2>
-    <!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-  </div>
-</div>
-</div>
 
-<div class="container">
 
-  <form >
-    <div class="form-group">
-      <label for="exampleInputEmail1">Ticket number</label>
-      <input type="number" class="form-control" id="user_input"  placeholder="Enter ticket number">
-    </div>
+<form method=POST action="{{ url_for('book_res') }}" >
+       
+         <div align="center"></center><h2>
+                  <span>  <input type="text"  name="fromstation" placeholder="From">
+                  <input type="text"  name="tostation" placeholder="To">
+                  <input type="date"  name="ticketdate" placeholder="Username">
+          </span></h2>  
+         <h3>      
+          <span> 1 <input type="text"  name="pn1" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_1" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_1" placeholder="ID number">
+          </span> </h3>  
+         <h3>
+          <span> 2 <input type="text"  name="pn2" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_2" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_2" placeholder="ID number">
+          </span> </h3>
+          <h3>
+          <span> 3 <input type="text"  name="pn3" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_3" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_3" placeholder="ID number">
+          </span></h3>
+       <h3>
+          <span> 4 <input type="text"  name="pn4" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_4" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_4" placeholder="ID number">
+          </span></h3>
+         <h3>
+          <span> 5 <input type="text"  name="pn5" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_5" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_5" placeholder="ID number">
+          </span></h3>
+          <h3>
+          <span> 6 <input type="text"  name="pn6" placeholder="Passenger name">  
+                  <input type="number"  name="passenger_age_6" placeholder="Passenger Age">
+                  <input type="text"  name="passenger_id_6" placeholder="ID number">
+          </span> </h3>             
+         
+        
+            <h2>    <button type="submit" >Submit</button></h2>
+            </div>
+            </form>
 
-<button type="button" class="btn btn-primary" onclick="display()" onkeypress="handle(event)">Submit</button>
 
-  </form>
 
-  <h1><span id='d'></span></h1>
-   <!-- <img id="bigpic" src="bigpic" /> -->
 
-</div>
 
+
+
+
+<!-- ************************************************************************************************** -->
 
 
 
