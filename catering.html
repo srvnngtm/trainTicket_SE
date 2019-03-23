@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>catering page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CDN -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+  <style>
+
+#passenger_fileds span
+{
+  width: 75px;
+}
+
+#passenger_fileds input
+{
+  width: 450px;
+}
+
+
+footer{
+  position: fixed;
+  z-index: 3;
+  bottom: 10px;
+  width: 100%;
+}
+
+.table-danger {
+  background-color: rgb(242, 136, 87,0.5) !important;
+}
+#end{
+ position:relative; top:25px; left: 45%;
+
+}
+  .foot
+  {
+   font-size: 40px;
+   background-color:black;
+  }
+	.footicon
+  {
+  		color:grey;
+	}
+
+  .footer,.push
+  {
+    left:0;
+    height: 545px;
+  }
+
+
+
+
+  #border label
+  {
+      width: 300px;
+  }
+</style>
+
+<script>
+
+</script>
+
+
+
+
+</head>
+
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <div class="container">
+    <!-- navbar#####################################################################################################333-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="#">ASHAS railways</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><span class="glyphicon"></span> Home</a></li>
+            <li><a href="#"><span class="glyphicon"></span> Book your ticket</a></li>
+            <li><a href="#"><span class="glyphicon"></span>E-catering</a></li>
+            <li><a href="#"><span class="glyphicon"></span>Cancel</a></li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="calculator.html"><span class="glyphicon glyphicon-log-in"></span>Enquiry/Contact us</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<!-- #################################################################### -->
+<div class="jumbotron">
+  <p>ASHAS RAILWAYS MENU FOR STANDARD BREAKFAST AND STANDARD MEALS - ANANDHA BHAVAN</p>
+</div>
+  <form class="" action="" method="post">
+
+
+  <table class="table table-hover table-dark" border="1">
+    <thead>
+      <tr>
+        <th scope="col">S.no</th>
+        <th scope="col">Item</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Rate</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <th scope="row">1</th>
+        <td >Standard tea/coffee</td>
+        <td>150ml disposal cup</td>
+        <td>15.00</td>
+        <td>
+      <input type="checkbox" name="myTextEditBox" value="checked"
+      style="margin-left:auto; margin-right:auto;">
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">2</th>
+        <td>Bread Butter & Cutlet</td>
+        <td>100gm</td>
+        <td>30.00</td>
+        <td>
+      <input type="checkbox" name="myTextEditBox" value="checked"
+      style="margin-left:auto; margin-right:auto;">
+ </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Idli & Vada </td>
+        <td>3+1</td>
+        <td>45.00</td>
+        <td>
+      <input type="checkbox" name="myTextEditBox" value="checked"
+      style="margin-left:auto; margin-right:auto;">
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">4</th>
+        <td >Bread omelette</td>
+        <td>2 slices with ketchup</td>
+        <td>40.00</td>
+        <td>
+      <input type="checkbox" name="myTextEditBox" value="checked"
+      style="margin-left:auto; margin-right:auto;">
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">5</th>
+        <td >Fruit juice/coconut water/lassi</td>
+        <td>200ml</td>
+        <td>55.00</td>
+        <td>
+      <input type="checkbox" name="myTextEditBox" value="checked"
+      style="margin-left:auto; margin-right:auto;">
+        </td>
+      </tr>
+
+      <tr class="table-danger">>
+        <th scope="row">6</th>
+        <td >Chappathi with chicken manchurian </td>
+        <td>2 pieces+150ml</td>
+        <td>149.00</td>
+        <td>
+      <input type="checkbox" name="myTextEditBox" value="checked"
+      style="margin-left:auto; margin-right:auto;">
+        </td>
+      </tr>
+
+      <tr >
+        <th scope="row">7</th>
+        <td >Veg meals</td>
+        <td>limited</td>
+        <td>99.00</td>
+        <td>
+      <input type="checkbox" name="myTextEditBox" value="checked"
+      style="margin-left:auto; margin-right:auto;">
+        </td>
+      </tr>
+
+      <tr class="table-danger">>
+        <th scope="row">8</th>
+        <td >Fish noodles</td>
+        <td>200 gm</td>
+        <td>189.00</td>
+        <td>
+      <input type="checkbox" name="myTextEditBox" value="checked"
+      style="margin-left:auto; margin-right:auto;">
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <div class="panel-body">
+    <p>* Tariff of all items inclusive of GST as applicable</p>
+    <p>**Neck and wing portion of chicken should not be served. </p>
+
+  </div>
+  <div style="text-align: center;">
+    <button type="button" class="btn btn-success">buy</button>
+ </div>
+ </form>
+</div>
+<!-- ************************************************************************************************** -->
+
+
+
+
+
+
+
+<div class="push"></div>
+</div>
+  <!-- ############################   FOOTER  ###############################################################################################################################-->
+</body>
+
+  <footer id="footer">
+    <!--footer -->
+
+    <div class="container" bg-color="red">
+      <div class="row" align="center">
+        <div class="col-sm-12 foot">
+          <a href="#"> <i class="fab fa-facebook-square footicon"></i></a>
+          <a href="#"> <i class="fab fa-github footicon"></i></a>
+          <a href="#"> <i class="fab fa-google-plus-square footicon"></i></a>
+          <a href="#"> <i class="fab fa-twitter-square footicon"></i></a>
+          <a href=""> <i class="fab fa-youtube footicon"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      © 2019 Copyright:
+      <a href="#"> #HASH </a>
+    </div>
+  </footer>
+
+
+
+
+</html>
