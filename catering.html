@@ -65,7 +65,55 @@ footer{
 </style>
 
 <script>
+function myFunction()
+{
 
+  amt=0;
+  var checkBox1 = document.getElementById("myCheck1");
+  var checkBox2 = document.getElementById("myCheck2");
+  var checkBox3 = document.getElementById("myCheck3");
+  var checkBox4 = document.getElementById("myCheck4");
+  var checkBox5 = document.getElementById("myCheck5");
+  var checkBox6 = document.getElementById("myCheck6");
+  var checkBox7 = document.getElementById("myCheck7");
+  var checkBox8 = document.getElementById("myCheck8");
+  var text = document.getElementById("text");
+  if (checkBox1.checked == true)
+  {
+    amt=amt+15;
+  }
+  if (checkBox2.checked == true)
+  {
+    amt=amt+30;
+  }
+  if (checkBox3.checked == true)
+  {
+    amt=amt+45;
+  }
+  if (checkBox4.checked == true)
+  {
+    amt=amt+40;
+  }
+  if (checkBox5.checked == true)
+  {
+    amt=amt+55;
+  }
+  if (checkBox6.checked == true)
+  {
+    amt=amt+149;
+  }
+  if (checkBox7.checked == true)
+  {
+    amt=amt+99;
+  }
+  if (checkBox8.checked == true)
+  {
+    amt=amt+189;
+  }
+
+document.getElementById("text").innerHTML ="Total amount: Rs."+amt;
+
+}
 </script>
 
 
@@ -110,6 +158,7 @@ footer{
 <div class="jumbotron">
   <p>ASHAS RAILWAYS MENU FOR STANDARD BREAKFAST AND STANDARD MEALS - ANANDHA BHAVAN</p>
 </div>
+
   <form class="" action="" method="post">
 
 
@@ -131,7 +180,7 @@ footer{
         <td>150ml disposal cup</td>
         <td>15.00</td>
         <td>
-      <input type="checkbox" name="myTextEditBox" value="checked"
+      <input type="checkbox" name="myTextEditBox" value="checked" id="myCheck1"  onclick="myFunction()"
       style="margin-left:auto; margin-right:auto;">
         </td>
       </tr>
@@ -142,7 +191,7 @@ footer{
         <td>100gm</td>
         <td>30.00</td>
         <td>
-      <input type="checkbox" name="myTextEditBox" value="checked"
+      <input type="checkbox" name="myTextEditBox" value="checked" id="myCheck2"  onclick="myFunction()"
       style="margin-left:auto; margin-right:auto;">
  </td>
       </tr>
@@ -152,7 +201,7 @@ footer{
         <td>3+1</td>
         <td>45.00</td>
         <td>
-      <input type="checkbox" name="myTextEditBox" value="checked"
+      <input type="checkbox" name="myTextEditBox" value="checked" id="myCheck3"  onclick="myFunction()"
       style="margin-left:auto; margin-right:auto;">
         </td>
       </tr>
@@ -163,7 +212,7 @@ footer{
         <td>2 slices with ketchup</td>
         <td>40.00</td>
         <td>
-      <input type="checkbox" name="myTextEditBox" value="checked"
+      <input type="checkbox" name="myTextEditBox" value="checked" id="myCheck4"  onclick="myFunction()"
       style="margin-left:auto; margin-right:auto;">
         </td>
       </tr>
@@ -174,7 +223,7 @@ footer{
         <td>200ml</td>
         <td>55.00</td>
         <td>
-      <input type="checkbox" name="myTextEditBox" value="checked"
+      <input type="checkbox" name="myTextEditBox" value="checked" id="myCheck5"  onclick="myFunction()"
       style="margin-left:auto; margin-right:auto;">
         </td>
       </tr>
@@ -185,7 +234,7 @@ footer{
         <td>2 pieces+150ml</td>
         <td>149.00</td>
         <td>
-      <input type="checkbox" name="myTextEditBox" value="checked"
+      <input type="checkbox" name="myTextEditBox" value="checked" id="myCheck6"  onclick="myFunction()"
       style="margin-left:auto; margin-right:auto;">
         </td>
       </tr>
@@ -196,7 +245,7 @@ footer{
         <td>limited</td>
         <td>99.00</td>
         <td>
-      <input type="checkbox" name="myTextEditBox" value="checked"
+      <input type="checkbox" name="myTextEditBox" value="checked" id="myCheck7"  onclick="myFunction()"
       style="margin-left:auto; margin-right:auto;">
         </td>
       </tr>
@@ -207,20 +256,25 @@ footer{
         <td>200 gm</td>
         <td>189.00</td>
         <td>
-      <input type="checkbox" name="myTextEditBox" value="checked"
+      <input type="checkbox" name="myTextEditBox" value="checked" id="myCheck8"  onclick="myFunction()"
       style="margin-left:auto; margin-right:auto;">
         </td>
       </tr>
 
     </tbody>
+
   </table>
   <div class="panel-body">
     <p>* Tariff of all items inclusive of GST as applicable</p>
-    <p>**Neck and wing portion of chicken should not be served. </p>
-
-  </div>
+    <p>**Neck and wing portion of chicken will not be served. </p>
+    <div style="text-align: center;">
+      <h4 id="text"></h4>
+    </div>
+</div>
   <div style="text-align: center;">
+
     <button type="button" class="btn btn-success">buy</button>
+
  </div>
  </form>
 </div>
