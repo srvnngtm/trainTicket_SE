@@ -11,7 +11,7 @@ mongo = PyMongo(app)
 
 pnr=mongo.db.pnr
 
-@app.route('/')
+@app.route('/',methods=['POST','GET'])
 def index():
     
     return render_template('login.html',methods=['POST','GET'])
@@ -25,7 +25,7 @@ def login():
     if login_user:
         if request.form['password']==login_user['password']:
             session['user']=request.form['username']
-            return render_template('home.html',user=session['user'])
+            return render_template('home.html',name=session['user'])
     return 'invalid username or password'   
 
 
@@ -43,7 +43,7 @@ def register():
         if existing_user is None:
             users.insert({'name':request.form['username'],'password':request.form['pass']})
             session['user']=request.form['username']
-            return render_template('home.html',user=session['user'])
+            return render_template('home.html',name=session['user'])
         return 'the username is already exists!'
     return render_template('reg.html')
 
@@ -53,33 +53,33 @@ def register():
 @app.route('/book_unres',methods=['POST','GET'])
 def book_unres():
     
-    return render_template('unreserved.html')
+    return render_template('unreserved.html',name=session['user'])
 
 
 
 @app.route('/faq',methods=['POST','GET'])
 def faq():
     
-    return render_template('faq.html')
+    return render_template('faq.html',name=session['user'])
 
 
 
 @app.route('/book_plat',methods=['POST','GET'])
 def book_plat():
     
-    return render_template('platform.html')
+    return render_template('platform.html',name=session['user'])
 
 
 
 @app.route('/berth_calc',methods=['POST','GET'])
 def berth_calc():
     
-    return render_template('berth.html')
+    return render_template('berth.html',name=session['user'])
 
 
 @app.route('/book',methods=['POST','GET'])
 def book():
-    return render_template('book.html')
+    return render_template('book.html',name=session['user'])
 
 
 @app.route('/book_res',methods=['POST','GET'])
@@ -94,13 +94,15 @@ def book_res():
     pnrnum=int(pnrnum)+1
     pnr.delete_one({})
     pnr.insert({'pnr':pnrnum})
-    return render_template('home.html',user=session['user'])
+    return render_template('home.html',name=session['user'])
 
-
+@app.route('/home',methods=['POST','GET'])
+def home():
+    return render_template('home.html',name=session['user'])
     
 @app.route('/enquiry',methods=['POST','GET'])
 def enquiry():
-    return render_template('enquiry.html',enquiry_output="Enter Train number or Station name")    
+    return render_template('enquiry.html',enquiry_output="Enter Train number or Station name",name=session['user'])    
     
 delays=['delayed by 1 minute','delayed by 2 minutes','delayed by 3 minutes','delayed by 4 minutes','delayed by 5 minutes','delayed by 10 minutes','delayed by 15 minutes','delayed by 20 minutes','delayed by 25 minutes','delayed by 30 minutes','delayed by 35 minutes','ahead by 1 minute ','ahead by 2 minutes','ahead by 3 minutes','ahead by 4 minutes','ahead by 5 minutes']   
 trains=list(range(12601,12630))
@@ -113,9 +115,9 @@ def enquiry_train_no():
     else:
         req_train=0
     if int(req_train) in trains :
-        return render_template('enquiry.html',enquiry_output=delays[random.randrange(16)])
+        return render_template('enquiry.html',enquiry_output=delays[random.randrange(16)],name=session['user'])
     else:
-        return render_template('enquiry.html',enquiry_ouput='Invalid train number')
+        return render_template('enquiry.html',enquiry_ouput='Invalid train number',name=session['user'])
 
 
 
@@ -128,12 +130,12 @@ station_delays={"chennai": "<br>Train 12601 delayed by 3 minutes<br> Train 12602
 
 @app.route('/enquiry_station_single',methods=['POST','GET'])
 def enquiry_station_single():
-    return render_template('enquiry.html',enquiry_output=Markup(station_delays[request.form['station']]))
+    return render_template('enquiry.html',enquiry_output=Markup(station_delays[request.form['station']]),name=session['user'])
 
 
 @app.route('/canc',methods=['POST','GET'])
 def canc():
-    return render_template('cancel.html',cop='')
+    return render_template('cancel.html',cop='',name=session['user'])
 
 
 @app.route('/cancellation',methods=['POST','GET'])
@@ -143,9 +145,9 @@ def cancellation():
     print(num_of_entries)
     if num_of_entries ==1:
         tickets.delete_one({'user':session['user'],'pnr':int(request.form['pnrnum'])})
-        return render_template('cancel.html',cop='Successfully cancelled')
+        return render_template('cancel.html',cop='Successfully cancelled',name=session['user'])
     else:
-        return render_template('cancel.html',cop='Incorrect PNR')
+        return render_template('cancel.html',cop='Incorrect PNR',name=session['user'])
     
 @app.route('/profile',methods=['POST','GET'])
 def profile():
@@ -164,7 +166,7 @@ def profile():
 
 @app.route('/catering',methods=['POST','GET'])
 def catering():
-    return render_template('catering.html')
+    return render_template('catering.html',name=session['user'])
 
 if __name__ =='__main__':
     app.secret_key='mysecret'

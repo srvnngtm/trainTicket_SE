@@ -87,15 +87,14 @@ footer{
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><span class="glyphicon"></span> Home</a></li>
-            <li><a href="#"><span class="glyphicon"></span> Book your ticket</a></li>
-            <li><a href="#"><span class="glyphicon"></span>E-catering</a></li>
-            <li><a href="#"><span class="glyphicon"></span>Cancel</a></li>
-
+ <li class="active"><a href={{ url_for('home') }} ><span class="glyphicon"></span> Home</a></li>
+            <li><a href={{ url_for('enquiry') }} ><span class="glyphicon"></span>Enquiry </a></li>
+            <li><a href={{ url_for('catering') }} ><span class="glyphicon"></span>E-catering</a></li>
+            <li><a href={{ url_for('faq') }} ><span class="glyphicon"></span>FAQ</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="calculator.html"><span class="glyphicon glyphicon-log-in"></span>Enquiry/Contact us</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a>{{name}}</a></li>
+            <li><a href={{ url_for('index') }} > Logout</a></li>
           </ul>
         </div>
       </div>

@@ -67,6 +67,8 @@ footer{
   {
       width: 300px;
   }
+  
+
 </style>
 
 <script>
@@ -96,14 +98,14 @@ footer{
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#"><span class="glyphicon"></span> Home</a></li>
-            <!-- <li><a href="#"><span class="glyphicon"></span> Book your ticket</a></li> -->
+            <li><a href={{ url_for('book') }} >Book your ticket</a></li>
             <!-- <li><a href="#"><span class="glyphicon"></span>E-catering</a></li> -->
             <!-- <li><a href="#"><span class="glyphicon"></span>Cancel</a></li> -->
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-
-            <li> {{user}}</li>
+            <li><a>{{name}}</a></li>
+            <li><a href={{ url_for('index') }} > Logout</a></li>
             <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
           </ul>
         </div>

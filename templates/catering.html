@@ -139,15 +139,15 @@ document.getElementById("text").innerHTML ="Total amount: Rs."+amt;
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><span class="glyphicon"></span> Home</a></li>
-            <li><a href="#"><span class="glyphicon"></span> Book your ticket</a></li>
-            <li><a href="#"><span class="glyphicon"></span>E-catering</a></li>
-            <li><a href="#"><span class="glyphicon"></span>Cancel</a></li>
+      <li class="active"><a href={{ url_for('home') }} ><span class="glyphicon"></span> Home</a></li>
+            <li><a href={{ url_for('enquiry') }} ><span class="glyphicon"></span>Enquiry </a></li>
+            <li><a href={{ url_for('catering') }} ><span class="glyphicon"></span>E-catering</a></li>
+            <li><a href={{ url_for('faq') }} ><span class="glyphicon"></span>FAQ</a></li>
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="calculator.html"><span class="glyphicon glyphicon-log-in"></span>Enquiry/Contact us</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a>{{name}}</a></li>
+            <li><a href={{ url_for('index') }} > Logout</a></li>
           </ul>
         </div>
       </div>
@@ -156,7 +156,8 @@ document.getElementById("text").innerHTML ="Total amount: Rs."+amt;
 
 <!-- #################################################################### -->
 <div class="jumbotron">
-  <p>ASHAS RAILWAYS MENU FOR STANDARD BREAKFAST AND STANDARD MEALS - ANANDHA BHAVAN</p>
+  <p >OM AMRITESWARI NAMAHA</p>
+  <p>ASHAS RAILWAYS MENU FOR STANDARD BREAKFAST AND STANDARD MEALS - 007 Punjabi Dhaba</p>
 </div>
 
   <form class="" action="" method="post">
@@ -228,7 +229,7 @@ document.getElementById("text").innerHTML ="Total amount: Rs."+amt;
         </td>
       </tr>
 
-      <tr class="table-danger">>
+      <tr class="table-danger">
         <th scope="row">6</th>
         <td >Chappathi with chicken manchurian </td>
         <td>2 pieces+150ml</td>
@@ -239,7 +240,7 @@ document.getElementById("text").innerHTML ="Total amount: Rs."+amt;
         </td>
       </tr>
 
-      <tr >
+      <tr>
         <th scope="row">7</th>
         <td >Veg meals</td>
         <td>limited</td>
@@ -250,7 +251,7 @@ document.getElementById("text").innerHTML ="Total amount: Rs."+amt;
         </td>
       </tr>
 
-      <tr class="table-danger">>
+      <tr class="table-danger">
         <th scope="row">8</th>
         <td >Fish noodles</td>
         <td>200 gm</td>
@@ -266,7 +267,7 @@ document.getElementById("text").innerHTML ="Total amount: Rs."+amt;
   </table>
   <div class="panel-body">
     <p>* Tariff of all items inclusive of GST as applicable</p>
-    <p>**Neck and wing portion of chicken will not be served. </p>
+
     <div style="text-align: center;">
       <h4 id="text"></h4>
     </div>
