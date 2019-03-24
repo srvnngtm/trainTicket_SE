@@ -8,10 +8,45 @@ app.config['MONGO_URI']= 'mongodb://saravanan:saravanan1@ds161315.mlab.com:61315
 
 mongo = PyMongo(app)
 
+
+pnr=mongo.db.pnr
+
 @app.route('/')
 def index():
     
-    return render_template('home.html',methods=['POST','GET'])
+    return render_template('login.html',methods=['POST','GET'])
+
+
+@app.route('/login',methods=['POST','GET'])
+def login():
+    users=mongo.db.users
+    login_user=users.find_one({'name':request.form['username']})
+    
+    if login_user:
+        if request.form['password']==login_user['password']:
+            session['user']=request.form['username']
+            return render_template('home.html',user=session['user'])
+    return 'invalid username or password'   
+
+
+@app.route('/reg', methods =['POST','GET'])
+def reg():
+    return render_template('reg.html')
+
+
+@app.route('/register', methods =['POST','GET'])
+def register():
+    if request.method=='POST':
+        users=mongo.db.users
+        existing_user =users.find_one({'name':request.form['username']})
+        
+        if existing_user is None:
+            users.insert({'name':request.form['username'],'password':request.form['pass']})
+            session['user']=request.form['username']
+            return render_template('home.html',user=session['user'])
+        return 'the username is already exists!'
+    return render_template('reg.html')
+
 
 
 
@@ -52,9 +87,14 @@ def book():
 def book_res():
     if request.method=='POST':
         tickets=mongo.db.tickets
-        tickets.insert({'from':request.form['fromstation'],'to':request.form['tostation'], 'date' : request.form['ticketdate'] ,\
+        pnr_number=pnr.find_one({})
+        pnrnum=int(pnr_number['pnr'])
+        tickets.insert({'user':session['user'],'pnr':pnrnum,'from':request.form['fromstation'],'to':request.form['tostation'], 'date' : request.form['ticketdate'] ,\
                         'p1n':request.form['pn1'],'p2n':request.form['pn2'],'p3n':request.form['pn3'],'p4n':request.form['pn4'],'p5n':request.form['pn5'],'p6n':request.form['pn6'] })
-    return redirect('/')
+    pnrnum=int(pnrnum)+1
+    pnr.delete_one({})
+    pnr.insert({'pnr':pnrnum})
+    return render_template('home.html',user=session['user'])
 
 
     
@@ -91,8 +131,20 @@ def enquiry_station_single():
     return render_template('enquiry.html',enquiry_output=Markup(station_delays[request.form['station']]))
     
   
-
+@app.route('/profile',methods=['POST','GET'])
+def profile():
+    tix=''
+    tickets=mongo.db.tickets
+    num_of_entries = tickets.find({'user':session['user']}).count()
+    for i in range(num_of_entries):
+        buffer = tickets.find_one({'user':session['user']})
+        tickets.delete_one({'user':session['user']})
+        #print(buffer)
+        tix=tix + '<tr><td> ' + str(buffer['pnr'])+ '</td><td> '+ str(buffer['from'])+ '</td><td> '+ str(buffer['to']) + '</td></tr>' 
+        tickets.insert_one(buffer)
+    
+    return render_template('profile.html',name=session['user'],tickets=Markup(tix))
 
 if __name__ =='__main__':
-
+    app.secret_key='mysecret'
     app.run(debug=True)      

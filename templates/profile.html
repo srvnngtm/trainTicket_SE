@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>register page</title>
+  <title>Platform page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CDN -->
@@ -29,8 +29,13 @@
     .login-btn { position:fixed; top:15px; right:15px; }
 
 
-
-
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+ }
+th, td {
+  padding: 15px;
+}
 
 
 
@@ -81,9 +86,7 @@ footer{
   }
 </style>
 
-   <script>
-
-   </script>
+   
 
 
 
@@ -132,33 +135,34 @@ footer{
 <div class="container">
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
-      <h2 class="text-center">Register for a new account.</h2>
-      <form role="form">
-  <div class="form-group">
-    <label for="exampleInputEmail1">First name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your first name">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Last name</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your last name">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Email</label>
-    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter your email id">
-  </div>
+      <h2 class="text-center">Booking ticket history</h2>
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
-  </div>
 
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+<!--
+        <select name = "parameters">
+                <option value = "station1">Coimbatore</option>
+                <option value = "station2">Chennai</option>
+                <option value = "station3">Madurai</option>
+                <option value = "station4">Bangalore</option>
+                <option value = "station5">Mumbai</option>
+        </select> -->
+
+
+
+      
+    <p>Name: <strong>{{name}}</strong></p>
+    <br>
+    <br>
+    <br>
+    <table style="width:100%" >
+      <tr>
+        <th>pnr</th>
+        <th>from</th> 
+        <th>to</th>
+      </tr>
+    {{tickets}}
+      </table>
+  
 
     </div>
   </div>
