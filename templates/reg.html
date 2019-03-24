@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home page</title>
+  <title>register page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CDN -->
@@ -13,17 +13,27 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 
   <style>
-  .block
-   {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: rgb(99, 172, 237,0.6);
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
+    html, body { height:100%; }
+
+    .outer-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    }
+
+    .inner-wrapper {
+      display:table-cell;
+      vertical-align:middle;
+      padding:15px;
+    }
+    .login-btn { position:fixed; top:15px; right:15px; }
+
+
+
+
+
+
+
 #passenger_fileds span
 {
   width: 75px;
@@ -46,6 +56,8 @@ footer{
  position:relative; top:25px; left: 45%;
 
 }
+
+
   .foot
   {
    font-size: 40px;
@@ -69,9 +81,9 @@ footer{
   }
 </style>
 
-<script>
+   <script>
 
-</script>
+   </script>
 
 
 
@@ -96,15 +108,14 @@ footer{
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#"><span class="glyphicon"></span> Home</a></li>
-            <!-- <li><a href="#"><span class="glyphicon"></span> Book your ticket</a></li> -->
-            <!-- <li><a href="#"><span class="glyphicon"></span>E-catering</a></li> -->
-            <!-- <li><a href="#"><span class="glyphicon"></span>Cancel</a></li> -->
+            <li><a href="#"><span class="glyphicon"></span> Book your ticket</a></li>
+            <li><a href="#"><span class="glyphicon"></span>E-catering</a></li>
+            <li><a href="#"><span class="glyphicon"></span>Cancel</a></li>
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-
-            <li> {{user}}</li>
-            <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+            <li><a href="calculator.html"><span class="glyphicon glyphicon-log-in"></span>Enquiry/Contact us</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
         </div>
       </div>
@@ -112,37 +123,60 @@ footer{
 
 
 <!-- ****************************************************************************************** -->
-<form method=POST action="{{ url_for('book') }}">
-<button type="submit" class="block" >Book reserved ticket</button> <br>
+
+
+
+<section id="loginform" class="outer-wrapper">
+
+  <div class="inner-wrapper">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h2 class="text-center">Register for a new account.</h2>
+      <form role="form" method="POST" action="{{ url_for('register') }}">
+  <div class="form-group">
+    <label for="exampleInputEmail1">First name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your first name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Last name</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your last name">
+  </div>
+  <div class="form-group">
+
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your username" name="username">
+  </div>
+
+  <div class="form-group">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password" name="pass">
+  </div>
+
+
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
-<form method=POST action="{{ url_for('book_unres') }}">
-<button type="submit" class="block" >Book Unreserved ticket</button> <br>
-</form>
+    </div>
+  </div>
+</div>
+</div>
 
-<form method=POST action="{{ url_for('enquiry') }}">
-<button type="submit" class="block" >Enquiry</button> <br>
-</form>
-
-<form method=POST action="{{ url_for('faq') }}">
-<button type="submit" class="block" >Frequently asked questions</button> <br>
-</form>
-
-<form method=POST action="{{ url_for('book_plat') }}">
-<button type="submit" class="block" >Book Platform ticket</button> <br>
-</form>
-
-<form method=POST action="{{ url_for('berth_calc') }}">
-<button type="submit" class="block" >Berth calculator</button> <br>
-</form>
-
-<button type="button" class="block">E-catering</button> <br>
-
-
-
-
+</section>
 
 <!-- ************************************************************************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
