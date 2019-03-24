@@ -129,8 +129,24 @@ station_delays={"chennai": "<br>Train 12601 delayed by 3 minutes<br> Train 12602
 @app.route('/enquiry_station_single',methods=['POST','GET'])
 def enquiry_station_single():
     return render_template('enquiry.html',enquiry_output=Markup(station_delays[request.form['station']]))
+
+
+@app.route('/canc',methods=['POST','GET'])
+def canc():
+    return render_template('cancel.html',cop='')
+
+
+@app.route('/cancellation',methods=['POST','GET'])
+def cancellation():
+    tickets=mongo.db.tickets
+    num_of_entries = tickets.find({'user':session['user'],'pnr':int(request.form['pnrnum'])}).count()
+    print(num_of_entries)
+    if num_of_entries ==1:
+        tickets.delete_one({'user':session['user'],'pnr':int(request.form['pnrnum'])})
+        return render_template('cancel.html',cop='Successfully cancelled')
+    else:
+        return render_template('cancel.html',cop='Incorrect PNR')
     
-  
 @app.route('/profile',methods=['POST','GET'])
 def profile():
     tix=''
@@ -145,6 +161,13 @@ def profile():
     
     return render_template('profile.html',name=session['user'],tickets=Markup(tix))
 
+
+@app.route('/catering',methods=['POST','GET'])
+def catering():
+    return render_template('catering.html')
+
 if __name__ =='__main__':
     app.secret_key='mysecret'
-    app.run(debug=True)      
+    app.run(debug=True)
+
+      

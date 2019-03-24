@@ -104,13 +104,12 @@ footer{
 
 <!-- ****************************************************************************************** -->
 
-<form method=POST action="{{ url_for('enquiry_train_no') }}">
+<form method=POST action="{{ url_for('cancellation') }}">
 			<span>
-        <label >Enter train number:</label>
-         <input type="number" name="train_no" class="form-control" id="exa" placeholder="Enter train number"><br>
+        <label >Enter pnr number:</label>
+         <input type="number" name="pnrnum" class="form-control" id="pnrnum" placeholder="Enter PNR number"><br>
         <button type="submit" name="submit" value="submit" class="btn btn-success">submit</button>
-				<!-- <input name="train_no" placeholder="train number" type="number"> -->
-				<!-- <input type="submit" name="submit" value="submit"> -->
+	
 			</span>
 
 	</form>
@@ -129,27 +128,10 @@ footer{
 			</span>
 </form> -->
 
-<form method=POST action="{{ url_for('enquiry_station_single') }}">
-<div class="form-group">
-  <label class="control-label "></label>
-  <div>
-    <label for="exampleInputPassword1">Station name</label>
-    <span>
-    <select name = "station" class="form-control">
-      <option value = "madurai">Madurai</option>
-      <option value = "chennai">Chennai</option>
-      <option value = "bangalore">Madurai</option>
-      <option value = "coimbatore">Bangalore</option>
-      <option value = "mumbai">Mumbai</option>
-    </select><br>
-    <button type="submit" name="submit" value="submit" class="btn btn-success">submit</button>
-    </span>
-  </div>
-</div>
-</form>
+
 
 <div class="jumbotron">
-<h1>enquiry output  : {{ enquiry_output }}</h1>
+<h1> {{cop}}</h1>
 </div>
 
 

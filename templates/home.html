@@ -112,6 +112,10 @@ footer{
 
 
 <!-- ****************************************************************************************** -->
+<form method=POST action="{{ url_for('profile') }}">
+<button type="submit" class="block" >My Profile</button> <br>
+</form>
+
 <form method=POST action="{{ url_for('book') }}">
 <button type="submit" class="block" >Book reserved ticket</button> <br>
 </form>
@@ -136,7 +140,14 @@ footer{
 <button type="submit" class="block" >Berth calculator</button> <br>
 </form>
 
-<button type="button" class="block">E-catering</button> <br>
+<form method=POST action="{{ url_for('canc') }}">
+<button type="submit" class="block" >Cancellation </button> <br>
+</form>
+
+<form method=POST action="{{ url_for('catering') }}">
+<button type="submit" class="block" >E-Catering </button> <br>
+</form>
+
 
 
 
